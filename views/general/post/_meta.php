@@ -34,6 +34,25 @@ if ( publisher_get_prop( 'hide-meta-views', FALSE ) ) {
 }
 
 ?>
+<div style="display: none;" itemscope itemprop="publisher" itemtype="http://schema.org/Organization">
+	<a href="<?php echo site_url(); ?>" itemprop="url"><span itemprop="name">Tin tức số</span></a>
+	<div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+		<img itemprop="url" src="https://tintucso.org/wp-content/uploads/2017/04/logo-452x120-min.png" alt="Logo Tin Tức Số" />
+	</div>
+    <span itemprop="sponsor" itemscope itemtype="http://schema.org/Organization">
+      <a itemprop="url" href="<?php echo site_url(); ?>">
+      <span itemprop="name">Tin tức số</span></a>
+    </span>
+</div>
+<div style="display: none;" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+<?php
+$thumbnail_ = publisher_get_thumbnail('full');
+?>
+	<img itemprop="image" alt="<?php echo esc_html($thumbnail_['title']); ?>" src="<?php echo $thumbnail_['src']; ?>" /> 
+	<meta itemprop="url" content="<?php echo $thumbnail_['src']; ?>">
+	<meta itemprop="width" content="<?php echo $thumbnail_['width']; ?>">
+	<meta itemprop="height" content="<?php echo $thumbnail_['height']; ?>">
+</div>
 <div <?php publisher_attr( 'post-meta', 'single-post-meta' ); ?>>
 	<?php
 

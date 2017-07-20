@@ -647,6 +647,7 @@ if ( ! function_exists( 'publisher_listing_social_share' ) ) {
 					}
 
 					?>
+					<li style="float:right;display: inline-block; width: 100px;margin-top: 2px;margin-right: 0;"> <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div></li>
 				</ul>
 				<?php
 

@@ -72,6 +72,7 @@ if ( $show_excerpt = ! empty( $post->post_excerpt ) ) {
 
 								?>
 								<article <?php publisher_attr( 'post', 'single-post-content' ); ?>>
+									<link itemprop="mainEntityOfPage" href="<?php the_permalink(); ?>" />
 									<div class="post-header-inner">
 										<div class="post-header-title">
 											<?php
@@ -187,6 +188,7 @@ if ( $show_excerpt = ! empty( $post->post_excerpt ) ) {
 
 								?>
 							</div>
+							<div class="fb-comments" data-width="100%" data-colorscheme="light" data-href="<?php the_permalink();?>" data-numposts="5"></div>
 							<?php
 
 							// Related posts

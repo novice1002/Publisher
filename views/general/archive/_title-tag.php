@@ -52,10 +52,6 @@ if ( ! bf_get_term_meta( 'hide_term_description' ) && term_description() ) {
 <section class="archive-title tag-title <?php echo esc_attr( implode( ' ', $container_class ) ); ?>">
 	<div class="pre-title"><span><?php echo $pre_title; // escaped before ?></span></div>
 
-	<div class="actions-container">
-		<a class="rss-link" href="<?php echo esc_url( $rss_link ); ?>"><i class="fa fa-rss"></i></a>
-	</div>
-
 	<h1 class="page-heading"><span class="h-title"><?php echo $title; // escaped before ?></span></h1>
 
 	<?php echo $term_desc; // escaped before ?>

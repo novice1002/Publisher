@@ -203,7 +203,15 @@ class BF_Json_LD_Generator {
 	 * @return string
 	 */
 	public static function get_the_author() {
-		return get_the_author();
+		global $post;
+
+		$display_name = get_the_author_meta( 'display_name', $post->post_author );
+
+		if ( $display_name && $display_name !== get_the_author_meta( 'login', $post->post_author ) ) {
+			return $display_name;
+		}
+
+		return '';
 	}
 
 
@@ -375,7 +383,7 @@ class BF_Json_LD_Generator {
 	 * @return array
 	 */
 	public static function generate_single_schema() {
-		return self::get_singular_schema( 'BlogPosting' );
+		return self::get_singular_schema( 'NewsArticle' );
 	}
 
 
@@ -389,7 +397,7 @@ class BF_Json_LD_Generator {
 	 *
 	 * @return array
 	 */
-	public static function get_singular_schema( $type = 'BlogPosting', $args = array() ) {
+	public static function get_singular_schema( $type = 'NewsArticle', $args = array() ) {
 
 		global $post;
 
@@ -440,13 +448,11 @@ class BF_Json_LD_Generator {
 
 			$schema['author'] = array(
 				'@type' => 'Person',
-				'@id'   => '#person-' . $author,
 				'name'  => $author,
 			);
 
 			$author = sanitize_html_class( $author );
 
-			$schema['author']['@id'] = '#person-' . $author;
 		}
 
 

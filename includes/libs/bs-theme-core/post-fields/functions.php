@@ -60,6 +60,10 @@ if ( ! function_exists( 'publisher_get_subtitle' ) ) {
 			$subtitle = bf_get_post_meta( 'wps_subtitle', NULL, '' );
 		}
 
+		if ( has_excerpt( $post->ID )){
+			$subtitle = get_the_excerpt( $post );
+		}
+
 		return publisher_html_limit_words( $subtitle, $limit );
 	}
 }

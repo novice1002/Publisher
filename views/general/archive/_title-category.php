@@ -80,9 +80,6 @@ if ( $show_subcategories !== 'hide' && count( $sub_categories ) > 0 ) {
 	<section class="archive-title category-title <?php echo implode( ' ', $container_class ); ?>">
 		<div class="pre-title"><span><?php echo $pre_title; // escaped before ?></span></div>
 
-		<div class="actions-container">
-			<a class="rss-link" href="<?php echo esc_url( $rss_link ); ?>"><i class="fa fa-rss"></i></a>
-		</div>
 
 		<h1 class="page-heading"><span class="h-title"><?php echo $title; // escaped before ?></span></h1>
 		<?php echo $term_desc; // escaped before inside WP ?>

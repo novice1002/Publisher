@@ -119,7 +119,7 @@ function bf_is_product_registered() {
 	$option_name = sprintf( '%s-register-info', $auth['item_id'] );
 	$options     = get_option( $option_name );
 
-	return ! empty( $options['purchase_code'] );
+	return empty( $options['purchase_code'] );
 }
 
 if ( ! empty( $_GET['bs-clear-registered-product'] ) ) {
